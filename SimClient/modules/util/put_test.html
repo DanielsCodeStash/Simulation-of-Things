@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="api_test_style.css">
+    <title>put test</title>
+
+    <script>
+        var urls = [
+
+            {url: "/api/worker", data : {
+                "workerId" : 10,
+                "name": "NY Uppdaterad Testmannen",
+                "arifiqUserId": "LFASJf"
+            }},
+            {url: "/api/activity/status", data: {hej: 3}}
+        ];
+    </script>
+</head>
+
+<body onload="setupTable()">
+
+<div class="block">
+    <a href="get_test.html">get test</a> |
+    <a href="post_test.html">post test</a>  |
+    <a href="put_test.html"><b>put test</b></a>  |
+    <a href="delete_test.html">delete test</a>
+    <br /><br />
+</div>
+
+<div class="block">
+    <h2>Request URL</h2>
+    <textarea rows="1" cols="100" id="url" spellcheck='false' title="request"></textarea>
+</div>
+
+<div class="block">
+    <h2>Put data</h2>
+    <textarea rows="10" cols="100" id="post" spellcheck='false' title="request"></textarea>
+    <br /><button onclick="runCall()">Execute</button>
+</div>
+
+<div class="block">
+    <h2>Result</h2>
+    <textarea rows="10" cols="150" id="output" spellcheck='false' title="result"></textarea>
+</div>
+
+<div class="block">
+    <h2>Meta</h2>
+    <textarea rows="4" cols="100" id="meta" spellcheck='false' title="meta"></textarea>
+</div>
+
+<div class="block">
+    <h2>Saved</h2>
+    Username: <input id="def_uname" value="daniel" title="uname"/>
+    Password: <input id="def_pw" value="password" title="pw"/>
+    <table id="cmdTable"></table>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    function runCall()
+    {
+        var callUrl = document.getElementById("url").value;
+        var callData = document.getElementById("post").value;
+        var callTime = (new Date).getTime();
+
+        $.ajax({
+            url: callUrl,
+            type: "PUT",
+            data: callData,
+            contentType: 'application/json',
+
+            success: function(data, textStatus, xhr)
+            {
+                document.getElementById("output").value = JSON.stringify(data, null, '    ');
+                document.getElementById("meta").value = "Response time: " + ((new Date).getTime() - callTime) + " ms";
+                document.getElementById("meta").value += "\nResponse status: " + xhr.status;
+                document.getElementById("meta").value += "\nText status: " + textStatus;
+            },
+
+            error: function(xhr, textStatus)
+            {
+                document.getElementById("output").value = "";
+                document.getElementById("meta").value = "Response time: " + ((new Date).getTime() - callTime) + " ms";
+                document.getElementById("meta").value += "\nResponse status: " + xhr.status;
+                document.getElementById("meta").value += "\nText status: " + textStatus;
+                document.getElementById("meta").value += "\nResponse txt: " + xhr.responseText;
+            }
+        });
+    }
+
+
+    function setupTable()
+    {
+        for(var i=0; i < urls.length; i++)
+        {
+            if(i==0)
+            {
+                activateCall(urls[i]);
+            }
+
+            (function()
+            {
+                var callUrl = urls[i];
+                var table = document.getElementById("cmdTable");
+                var row = table.insertRow(i);
+
+                var cell = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+
+                cell.innerHTML = urls[i].url;
+                cell2.innerHTML = JSON.stringify(urls[i].data);
+
+                if(cell2.innerHTML.length > 50)
+                {
+                    cell2.innerHTML = cell2.innerHTML.slice(0, 50) + " ...";
+                }
+
+                row.onclick = function ()
+                {
+                    activateCall(callUrl);
+                }
+            })();
+        }
+    }
+
+    function activateCall(callUrl)
+    {
+        var authStr = "username=" + $("#def_uname").val() + "&pw=" + $("#def_pw").val();
+
+        if(callUrl.url.contains("?"))
+        {
+            $("#url").val(callUrl.url);
+        }
+        else
+        {
+            $("#url").val(callUrl.url);
+        }
+
+        $("#post").val(JSON.stringify(callUrl.data, null, '    '))
+    }
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+	
+	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+	<script src="require_load.js"></script>
+	<script src="template.js"></script>
+	<script src="lib/highcharts/js/highcharts.js"></script>
+	<script src="lib/highcharts/js/modules/exporting.js"></script>
+
+	<script src="init.js"></script>
+	<script src="app.js"></script>
+	<link href="app.css" rel="stylesheet" type="text/css">
+	<!-- @endif -->
+	 
+	<!-- @if NODE_ENV == 'PRODUCTION' -->
+	<script src="template.js"></script>
+	<script src="require_load.min.js"></script>
+	<script src="lib/highcharts/js/highcharts.js"></script>
+	<script src="lib/highcharts/js/modules/exporting.js"></script>
+
+	<script src="app.min.js"></script>
+	<link href="app.min.css" rel="stylesheet" type="text/css">
+	<!-- @endif -->
+
+    <title>SiM</title>
+</head>
+<body>
+
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+<script src="//localhost:35729/livereload.js"></script>
+<!-- @endif -->
+
+<div id="container">
+	<div id="header"></div>
+	<div id="control"></div>
+	<div id="content">
+		<canvas id="canvas"></canvas>
+	</div>
+	<div id="footer"></div>
+</div>
+
+</body>
+</html>

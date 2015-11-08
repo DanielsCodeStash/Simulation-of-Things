@@ -1,0 +1,17 @@
+#footer
+{
+	background-image: url("http://i.imgur.com/aU3xfWT.jpg");
+	padding: 50px 10px 20px 10px;
+
+	color: #787878;
+    font-family: verdana,sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 2pt;
+    line-height: 1;
+    text-align: right;
+    text-shadow: 8px 5px 15px rgba(5, 5, 5, 1);
+    word-spacing: 2pt;
+}
+
+
