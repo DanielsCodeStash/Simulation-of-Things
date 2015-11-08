@@ -3,3 +3,7 @@ SimApi/.idea/.name
 *.iml
 SimApi/.idea/.name
 SimApi/.idea/.name
+*.class
+SimApi/target/
+SimClient/config/node_modules/
+SimClient/out/

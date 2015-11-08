@@ -25,7 +25,7 @@
 
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>api;server</param-value>
+            <param-value>api;server;util</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
