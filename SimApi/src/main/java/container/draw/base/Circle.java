@@ -50,9 +50,10 @@ public class Circle extends Primitive
         return midPoint;
     }
 
-    public void setMidPoint(Point midPoint)
+    public Circle setMidPoint(Point midPoint)
     {
         this.midPoint = midPoint;
+        return this;
     }
 
     public double getRadius()
@@ -60,9 +61,10 @@ public class Circle extends Primitive
         return radius;
     }
 
-    public void setRadius(double radius)
+    public Circle setRadius(double radius)
     {
         this.radius = radius;
+        return this;
     }
 
     public String getColor()
@@ -70,9 +72,16 @@ public class Circle extends Primitive
         return color;
     }
 
-    public void setColor(String color)
+    public Circle setColor(String color)
     {
         this.color = color;
+        return this;
+    }
+
+    public Circle setColor(String color, double alpha)
+    {
+        this.color = ColorUtil.hexAlpha(color, alpha);
+        return this;
     }
 
     public Double getLineWidth()

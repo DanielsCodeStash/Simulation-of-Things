@@ -1,13 +1,13 @@
 package container.draw.fill;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import util.ColorUtil;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GradientStop
 {
     private String color;
     private double point;
-    private Double alpha;
 
     public GradientStop(double point, String color)
     {
@@ -17,9 +17,8 @@ public class GradientStop
 
     public GradientStop(double point, String color, double alpha)
     {
-        this.color = color;
+        this.color = ColorUtil.hexAlpha(color, alpha);
         this.point = point;
-        this.alpha = alpha;
     }
 
     public String getColor()
@@ -30,10 +29,5 @@ public class GradientStop
     public double getPoint()
     {
         return point;
-    }
-
-    public Double getAlpha()
-    {
-        return alpha;
     }
 }

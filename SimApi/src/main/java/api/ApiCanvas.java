@@ -4,9 +4,11 @@ import container.Component;
 import container.Entity;
 import container.World;
 import container.draw.Drawable;
+import container.draw.Point;
 import container.draw.base.Circle;
 import container.draw.Canvas;
 import container.draw.base.Line;
+import container.draw.base.Text;
 import util.json.JsonUtil;
 
 import javax.ws.rs.GET;
