@@ -1,12 +1,8 @@
-package container.entities;
+package entity;
 
-import container.Entity;
-import container.Position;
-import container.ResourcePoint;
-
-import java.util.Date;
-import java.util.function.Function;
-import java.util.function.Supplier;
+import component.CityDrawable;
+import component.Position;
+import component.ResourcePoint;
 
 public class City extends Entity
 {
@@ -20,9 +16,9 @@ public class City extends Entity
         double resourceRadius = population / 100 + 5;
 
         components.add(new ResourcePoint(this, () -> (double) this.getPopulation())
-                            .setRadius(resourceRadius)
-                            .setResourceEffect(resourceStrength)
-                            .setResourceDissipation(0.5));
+                .setRadius(resourceRadius)
+                .setResourceEffect(resourceStrength)
+                .setResourceDissipation(0.5));
 
         components.add(new CityDrawable(this));
         components.add(position);

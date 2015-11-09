@@ -19,16 +19,17 @@
 
 <div class="block">
     <a href="get_test.html"><b>get test</b></a> |
-    <a href="post_test.html">post test</a>  |
-    <a href="put_test.html">put test</a>  |
+    <a href="post_test.html">post test</a> |
+    <a href="put_test.html">put test</a> |
     <a href="delete_test.html">delete test</a>
-    <br /><br />
+    <br/><br/>
 </div>
 
 <div class="block">
     <h2>Request URL</h2>
     <textarea rows="2" cols="100" id="url" spellcheck='false' title="request"></textarea>
-    <br /><button onclick="runCall()">Execute</button>
+    <br/>
+    <button onclick="runCall()">Execute</button>
 </div>
 
 <div class="block">
@@ -52,8 +53,7 @@
 </html>
 
 <script type="text/javascript">
-    function runCall()
-    {
+    function runCall() {
         var callUrl = document.getElementById("url").value;
         var callTime = (new Date).getTime();
 
@@ -61,16 +61,14 @@
             url: callUrl,
             crossDomain: true,
 
-            success: function(data, textStatus, xhr)
-            {
+            success: function (data, textStatus, xhr) {
                 document.getElementById("output").value = JSON.stringify(data, null, '    ');
                 document.getElementById("meta").value = "Response time: " + ((new Date).getTime() - callTime) + " ms";
                 document.getElementById("meta").value += "\nResponse status: " + xhr.status;
                 document.getElementById("meta").value += "\nText status: " + textStatus;
             },
 
-            error: function(xhr, textStatus)
-            {
+            error: function (xhr, textStatus) {
                 document.getElementById("output").value = "";
                 document.getElementById("meta").value = "Response time: " + ((new Date).getTime() - callTime) + " ms";
                 document.getElementById("meta").value += "\nResponse status: " + xhr.status;
@@ -81,41 +79,33 @@
     }
 
 
-    function setupTable()
-    {
-        for(var i=0; i < urls.length; i++)
-        {
-            if(i==0)
-            {
+    function setupTable() {
+        for (var i = 0; i < urls.length; i++) {
+            if (i == 0) {
                 activateCall(urls[i]);
             }
 
-            (function()
-            {
+            (function () {
                 var callUrl = urls[i];
                 var table = document.getElementById("cmdTable");
                 var row = table.insertRow(i);
                 var cell = row.insertCell(0);
 
                 cell.innerHTML = urls[i];
-                row.onclick = function ()
-                {
+                row.onclick = function () {
                     activateCall(callUrl);
                 }
             })();
         }
     }
 
-    function activateCall(callUrl)
-    {
+    function activateCall(callUrl) {
         var authStr = "username=" + $("#def_uname").val() + "&pw=" + $("#def_pw").val();
 
-        if(callUrl.contains("?"))
-        {
+        if (callUrl.contains("?")) {
             $("#url").val(callUrl + "&" + authStr);
         }
-        else
-        {
+        else {
             $("#url").val(callUrl + "?" + authStr);
         }
     }

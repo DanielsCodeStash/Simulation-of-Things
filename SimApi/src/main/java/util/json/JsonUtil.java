@@ -22,8 +22,7 @@ public class JsonUtil
         try
         {
             return mapper.writeValueAsString(obj);
-        }
-        catch (JsonProcessingException e)
+        } catch (JsonProcessingException e)
         {
             e.printStackTrace();
             return null;
@@ -38,8 +37,7 @@ public class JsonUtil
         try
         {
             return mapper.readValue(jsonData, valueType);
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             e.printStackTrace();
             throw new ApiError(ErrorType.BAD_REQUEST, "Failed to parse json: 24");
@@ -53,8 +51,7 @@ public class JsonUtil
         try
         {
             return mapper.treeToValue(jsonData, valueType);
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             e.printStackTrace();
             throw new ApiError(ErrorType.BAD_REQUEST, "Failed to parse json: 23");

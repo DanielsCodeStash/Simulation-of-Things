@@ -1,7 +1,7 @@
-package container.draw.base;
+package world.draw.base;
 
-import container.draw.Primitive;
-import container.draw.Point;
+import world.draw.Point;
+import world.draw.Primitive;
 
 public class Line extends Primitive
 {

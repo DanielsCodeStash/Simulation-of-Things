@@ -62,21 +62,18 @@ public class DateUtil
     public static long getCleanUnitStartTime(long time, DurationFieldType fieldType)
     {
         MutableDateTime active = new MutableDateTime(time);
-        if(fieldType == DurationFieldType.months())
+        if (fieldType == DurationFieldType.months())
         {
             active.setDayOfMonth(0);
             active.setMillisOfDay(0);
-        }
-        else if(fieldType == DurationFieldType.weeks())
+        } else if (fieldType == DurationFieldType.weeks())
         {
             active.setDayOfWeek(0);
             active.setMillisOfDay(0);
-        }
-        else if(fieldType == DurationFieldType.days())
+        } else if (fieldType == DurationFieldType.days())
         {
             active.setMillisOfDay(0);
-        }
-        else if(fieldType == DurationFieldType.hours())
+        } else if (fieldType == DurationFieldType.hours())
         {
             active.setMinuteOfHour(0);
             active.setSecondOfMinute(0);

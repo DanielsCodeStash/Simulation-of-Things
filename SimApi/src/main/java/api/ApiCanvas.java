@@ -1,15 +1,10 @@
 package api;
 
-import container.Component;
-import container.Entity;
-import container.World;
-import container.draw.Drawable;
-import container.draw.Point;
-import container.draw.base.Circle;
-import container.draw.Canvas;
-import container.draw.base.Line;
-import container.draw.base.Text;
+import world.draw.Canvas;
+import world.draw.Drawable;
+import entity.Entity;
 import util.json.JsonUtil;
+import world.World;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -28,13 +23,13 @@ public class ApiCanvas
     {
         Canvas canvas = new Canvas(100, 100);
 
-        for(Entity entity : world.getEntities())
+        for (Entity entity : world.getEntities())
         {
             entity
-                .getComponents()
-                .stream()
-                .filter(c -> c instanceof Drawable)
-                .forEach(c -> canvas.addDrawable((Drawable) c));
+                    .getComponents()
+                    .stream()
+                    .filter(c -> c instanceof Drawable)
+                    .forEach(c -> canvas.addDrawable((Drawable) c));
         }
 
         return JsonUtil.mapToJson(canvas);

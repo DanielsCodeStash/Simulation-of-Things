@@ -1,8 +1,8 @@
-package container;
+package world;
 
-import container.draw.Point;
-import container.entities.City;
-import container.entities.Person;
+import entity.City;
+import entity.Entity;
+import entity.Person;
 
 import java.util.ArrayList;
 import java.util.List;

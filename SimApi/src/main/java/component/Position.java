@@ -1,11 +1,13 @@
-package container;
+package component;
 
 public class Position extends Component
 {
     private Double x;
     private Double y;
 
-    public Position() {}
+    public Position()
+    {
+    }
 
     public Position(Double x, Double y)
     {

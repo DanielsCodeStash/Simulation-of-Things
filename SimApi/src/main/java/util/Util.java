@@ -11,8 +11,7 @@ public class Util
         if (coll instanceof List)
         {
             return (List) coll;
-        }
-        else
+        } else
         {
             return new ArrayList(coll);
         }

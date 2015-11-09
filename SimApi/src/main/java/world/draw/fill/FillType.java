@@ -1,9 +1,8 @@
-package container.draw.fill;
+package world.draw.fill;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import container.meta.EnumUtil;
-import container.meta.SerializableEnum;
+import util.SerializableEnum;
 
 public enum FillType implements SerializableEnum
 {
@@ -20,8 +19,10 @@ public enum FillType implements SerializableEnum
     {
         switch (this)
         {
-            case SOLID: return "solid";
-            case GRADIENT: return "gradient";
+            case SOLID:
+                return "solid";
+            case GRADIENT:
+                return "gradient";
             default:
                 System.err.println("Cant serializa filltype");
                 return null;

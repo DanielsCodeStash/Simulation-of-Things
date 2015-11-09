@@ -21,7 +21,7 @@
     </Appenders>
     <Loggers>
 
-        <logger name="org.quartz" level="error" />
+        <logger name="org.quartz" level="error"/>
 
         <Root level="trace">
             <AppenderRef ref="Stdout" level="debug"/>

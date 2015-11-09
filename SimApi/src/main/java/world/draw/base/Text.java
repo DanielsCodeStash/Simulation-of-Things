@@ -1,8 +1,8 @@
-package container.draw.base;
+package world.draw.base;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import container.draw.Point;
-import container.draw.Primitive;
+import world.draw.Point;
+import world.draw.Primitive;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)

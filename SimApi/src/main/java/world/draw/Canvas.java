@@ -1,8 +1,8 @@
-package container.draw;
+package world.draw;
 
-import container.draw.base.Circle;
-import container.draw.base.Line;
-import container.draw.base.Text;
+import world.draw.base.Circle;
+import world.draw.base.Line;
+import world.draw.base.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,21 +42,18 @@ public class Canvas
 
     public Canvas addDrawable(Drawable drawable)
     {
-        for(Primitive primitive : drawable.getDrawing().getPrimitives())
+        for (Primitive primitive : drawable.getDrawing().getPrimitives())
         {
-            if(primitive instanceof Circle)
+            if (primitive instanceof Circle)
             {
                 addCircle((Circle) primitive);
-            }
-            else if(primitive instanceof Line)
+            } else if (primitive instanceof Line)
             {
                 addLine((Line) primitive);
-            }
-            else if(primitive instanceof Text)
+            } else if (primitive instanceof Text)
             {
                 addText((Text) primitive);
-            }
-            else
+            } else
             {
                 throw new IllegalArgumentException("Unknown drawable type");
             }

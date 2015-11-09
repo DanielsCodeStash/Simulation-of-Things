@@ -1,4 +1,4 @@
-package container.draw.fill;
+package world.draw.fill;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,9 @@ public class CircleGradientFill extends Fill
 
     private List<GradientStop> gradientStops = new ArrayList<>();
 
-    public CircleGradientFill(){}
+    public CircleGradientFill()
+    {
+    }
 
     public CircleGradientFill(double innerRadius, double outerRadius)
     {

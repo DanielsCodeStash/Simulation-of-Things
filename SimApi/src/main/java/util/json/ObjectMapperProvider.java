@@ -26,11 +26,11 @@ public class ObjectMapperProvider implements ContextResolver<ObjectMapper>
     public static ObjectMapper getObjectMapper()
     {
         return new ObjectMapper()
-            .enable(SerializationFeature.INDENT_OUTPUT)
-            .disable(SerializationFeature.FAIL_ON_EMPTY_BEANS)
-            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
-            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-            .enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
+                .enable(SerializationFeature.INDENT_OUTPUT)
+                .disable(SerializationFeature.FAIL_ON_EMPTY_BEANS)
+                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+                .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+                .enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
     }
 
 }

@@ -1,4 +1,4 @@
-package container.meta;
+package util;
 
 public interface SerializableEnum
 {

@@ -1,4 +1,4 @@
-package container.draw;
+package world.draw;
 
 public class Point
 

@@ -1,10 +1,10 @@
-package container;
+package component;
 
-import container.draw.Drawable;
-import container.draw.Drawing;
-import container.draw.base.Circle;
+import world.draw.Drawable;
+import world.draw.Drawing;
+import world.draw.base.Circle;
+import entity.Entity;
 
-import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ResourcePoint extends Component implements Drawable

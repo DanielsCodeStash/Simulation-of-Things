@@ -1,4 +1,4 @@
-package container;
+package component;
 
 public enum Option
 {

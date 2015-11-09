@@ -41,7 +41,7 @@ public class Stopwatch
 
     public void startSubLap(String name)
     {
-        if(lastSubLap != null)
+        if (lastSubLap != null)
         {
             endLastSubLap();
         }
@@ -63,19 +63,19 @@ public class Stopwatch
 
     public String getReport()
     {
-        if(end == -1)
+        if (end == -1)
         {
             end();
         }
 
-        if(lastSubLap != null)
+        if (lastSubLap != null)
         {
             endLastSubLap();
         }
 
         String out = "_stopwatch " + name + "_" + "\n";
         out += " total: " + getTimeDiff(start, end) + "\n";
-        for(SubLap lap : subLaps)
+        for (SubLap lap : subLaps)
         {
             out += " " + lap.name + ": " + getTimeDiff(lap.start, lap.end) + "\n";
         }
@@ -109,23 +109,23 @@ public class Stopwatch
     {
         long ms = to - from;
 
-        int millis  = (int) ms % 1000;
-        int seconds = (int) (ms / 1000) % 60 ;
-        int minutes = (int) ((ms / (1000*60)) % 60);
-        int hours   = (int) ((ms / (1000*60*60)) % 24);
+        int millis = (int) ms % 1000;
+        int seconds = (int) (ms / 1000) % 60;
+        int minutes = (int) ((ms / (1000 * 60)) % 60);
+        int hours = (int) ((ms / (1000 * 60 * 60)) % 24);
 
         boolean largerUnitFound = false;
         String out = "";
 
-        if(hours != 0)
+        if (hours != 0)
         {
             largerUnitFound = true;
             out += hours + "h ";
         }
 
-        if(largerUnitFound || minutes != 0)
+        if (largerUnitFound || minutes != 0)
         {
-            if(largerUnitFound)
+            if (largerUnitFound)
                 out += addPadding(minutes, 2) + "m ";
             else
                 out += minutes + "m ";
@@ -133,9 +133,9 @@ public class Stopwatch
             largerUnitFound = true;
         }
 
-        if(largerUnitFound || seconds != 0)
+        if (largerUnitFound || seconds != 0)
         {
-            if(largerUnitFound)
+            if (largerUnitFound)
                 out += addPadding(seconds, 2) + "s ";
             else
                 out += seconds + "s ";
@@ -143,7 +143,7 @@ public class Stopwatch
             largerUnitFound = true;
         }
 
-        if(largerUnitFound)
+        if (largerUnitFound)
             out += addPadding(millis, 3) + "ms";
         else
             out += millis + "ms";
@@ -155,11 +155,11 @@ public class Stopwatch
     {
         String out = "";
 
-        for(int i=1; i < num; i++)
+        for (int i = 1; i < num; i++)
         {
             int fence = (int) Math.pow(10, i);
 
-            if(value < fence)
+            if (value < fence)
             {
                 out += "0";
             }

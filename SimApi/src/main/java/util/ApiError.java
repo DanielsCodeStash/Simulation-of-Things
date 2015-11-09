@@ -15,10 +15,10 @@ public class ApiError extends WebApplicationException
     {
 
         super(
-            Response.status(type.getHttpCode())
-                .entity(message)
-                .type(MediaType.TEXT_PLAIN_TYPE)
-                .build()
+                Response.status(type.getHttpCode())
+                        .entity(message)
+                        .type(MediaType.TEXT_PLAIN_TYPE)
+                        .build()
         );
     }
 }

@@ -1,6 +1,9 @@
-package container;
+package entity;
 
-import container.entities.CityDrawable;
+import component.CityDrawable;
+import component.Component;
+import component.Option;
+import component.Position;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,15 +32,15 @@ public class Entity
 
     public <T extends Component> T get(Class<T> type, Option option)
     {
-        for(Component c : components)
+        for (Component c : components)
         {
-            if(c.getClass().equals(type))
+            if (c.getClass().equals(type))
             {
                 return type.cast(c);
             }
         }
 
-        if(option == Option.REQUIRED)
+        if (option == Option.REQUIRED)
         {
             throw new RuntimeException("Missing Component: " + type.getName() + "(" + option + ")");
         }

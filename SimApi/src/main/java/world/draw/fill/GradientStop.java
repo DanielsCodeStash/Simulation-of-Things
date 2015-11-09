@@ -1,4 +1,4 @@
-package container.draw.fill;
+package world.draw.fill;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import util.ColorUtil;

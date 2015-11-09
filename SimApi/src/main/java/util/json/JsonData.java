@@ -17,8 +17,7 @@ public class JsonData
         try
         {
             jsonNode = mapper.readTree(jsonString);
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             e.printStackTrace();
             throw new ApiError(ErrorType.BAD_REQUEST);

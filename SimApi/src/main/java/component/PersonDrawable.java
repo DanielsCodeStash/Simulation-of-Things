@@ -1,12 +1,10 @@
-package container.entities;
+package component;
 
-import container.Component;
-import container.Entity;
-import container.Position;
-import container.draw.Drawable;
-import container.draw.Drawing;
-import container.draw.base.Circle;
-import container.draw.fill.SolidFill;
+import world.draw.Drawable;
+import world.draw.Drawing;
+import world.draw.base.Circle;
+import world.draw.fill.SolidFill;
+import entity.Entity;
 
 public class PersonDrawable extends Component implements Drawable
 {

@@ -1,7 +1,7 @@
-package container.entities;
+package entity;
 
-import container.Entity;
-import container.Position;
+import component.PersonDrawable;
+import component.Position;
 
 public class Person extends Entity
 {

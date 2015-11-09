@@ -1,9 +1,9 @@
-package container.draw.base;
+package world.draw.base;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import container.draw.Primitive;
-import container.draw.Point;
-import container.draw.fill.Fill;
+import world.draw.Point;
+import world.draw.Primitive;
+import world.draw.fill.Fill;
 import util.ColorUtil;
 
 

@@ -16,8 +16,7 @@ class PrimitiveExceptionMapper implements ExceptionMapper<Throwable>
         if (t instanceof WebApplicationException)
         {
             return ((WebApplicationException) t).getResponse();
-        }
-        else
+        } else
         {
             System.err.println("Uncaught exception thrown by REST service " + t);
             t.printStackTrace();
