@@ -23,6 +23,8 @@ public class ApiCanvas
     {
         Canvas canvas = new Canvas(100, 100);
 
+        canvas.addDrawable(world.getResourceAggregator());
+
         for (Entity entity : world.getEntities())
         {
             entity

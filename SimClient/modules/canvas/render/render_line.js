@@ -17,7 +17,21 @@ sim.canvas.render_line = function(lines, ctx, cWidth, cHeight) {
         var yTo = to.y / cHeight * sim.canvas.h;
         ctx.lineTo(xTo, yTo);
 
-        ctx.lineWidth = 2;
+        var lineWidth = 2;
+        if(l.lineWidth)
+        {
+            lineWidth = l.lineWidth;
+        }
+        ctx.lineWidth = lineWidth;
+
+        var color = "black";
+        if (l.color) 
+        {
+            color = l.color;
+        }
+
+        ctx.strokeStyle = color;
+
         ctx.stroke();
     }
 };

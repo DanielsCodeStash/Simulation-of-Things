@@ -47,13 +47,16 @@ public class Canvas
             if (primitive instanceof Circle)
             {
                 addCircle((Circle) primitive);
-            } else if (primitive instanceof Line)
+            }
+            else if (primitive instanceof Line)
             {
                 addLine((Line) primitive);
-            } else if (primitive instanceof Text)
+            }
+            else if (primitive instanceof Text)
             {
                 addText((Text) primitive);
-            } else
+            }
+            else
             {
                 throw new IllegalArgumentException("Unknown drawable type");
             }

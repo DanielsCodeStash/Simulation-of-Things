@@ -11,10 +11,7 @@ public class World
 {
     private List<Entity> entities = new ArrayList<>();
 
-    public static void main(String[] args)
-    {
-        System.out.println("hej");
-    }
+    private ResourceAggregator resourceAggregator = new ResourceAggregator();
 
     public World()
     {
@@ -55,4 +52,14 @@ public class World
         return entities;
     }
 
+    public ResourceAggregator getResourceAggregator()
+    {
+        return resourceAggregator;
+    }
+
+    public World setResourceAggregator(ResourceAggregator resourceAggregator)
+    {
+        this.resourceAggregator = resourceAggregator;
+        return this;
+    }
 }
